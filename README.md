@@ -1,1 +1,1 @@
-This is a nextjs website for idealplug agency - nothing to see here
+This is a nextjs website for idealplug agency - nothing to actually see here
