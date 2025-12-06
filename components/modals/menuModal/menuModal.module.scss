@@ -1,0 +1,106 @@
+/* This contains the scss for the contact modal component */
+
+//Libraries -->
+@use "@/styles/base.module" as *;
+
+//Commencing the code -->
+%menuBar {
+    //border: 2px solid red;
+    border-right: 1px solid rgba(0, 0, 0, 0.09);
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5% 4%;
+    background-color: $tertiary-color;
+    z-index: 90;
+    height: 100%;
+    width: 70%;
+    left: 0%;
+    top: 0%;
+    font-family: "Inter";
+
+    @include desktop {
+        display: none;
+    }
+
+    @include tabletPro {
+        display: none;
+    }
+
+    .menu_heading {
+        //border: 2px solid red;
+        padding: 2% 1% 5% 0%;
+        @include size(100%, 7%);
+        border-bottom: 1px solid $primary-color;
+        @include flexBar($position: relative, $justify: flex-start, $align: center, $gap: 20%);
+
+        .close_button {
+            //border: 1px solid green;
+            position: relative;
+            //top: -12%;
+            color: $primary-color;
+            background-color: transparent;
+            border-color: transparent;
+            outline: none;
+        }
+
+        .logo { 
+           //border: 1px solid red;
+           @include flexBar($position: relative, $justify: center, $align: center);
+            @include size(20%, 90%);
+            //top: 12%;
+            //left: 5%;
+
+            .img {
+                //border: 1px solid red;
+                object-fit: contain;
+                position: relative;
+                @include size(auto, 60%);
+                //top: 15%;
+    
+                // @include tabletPro {
+                //     height: 50%;
+                // }
+    
+                // @include phonePro {
+                //     height: 60%;
+                // }
+            }
+        }
+    }
+
+    .links {
+        //border: 1px solid red;
+        @include text-layout($size: 15px, $color: $text-color-1, $l_height: 20px);
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border-color: transparent;
+        justify-content: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+        @include size (100%, 6%);
+        padding: 4% 5% 4% 0%;
+        background-color: transparent;
+        outline: none;
+        //border-top: transparent;
+
+        @include phoneMini {
+            font-size: 12px;
+        }
+    }
+}
+
+.main {
+    @extend %menuBar;
+    transform: translateX(0%);
+    position: fixed;
+}
+
+.inActiveMenu {
+    transform: translateX(-100%);
+    @extend %menuBar;
+}

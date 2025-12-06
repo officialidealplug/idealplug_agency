@@ -1,0 +1,50 @@
+/* This contains the scss for the layout page */
+
+//Libraries -->
+@use "@/styles/base.module" as *;
+
+//Commencing the code -->
+.html, .body {
+    align-items: center;
+    --scroll-behavior: smooth!important;
+    scroll-behavior: smooth!important;
+    overflow-x: hidden;
+    overflow-y: auto;  
+    
+    /* Styles for the scrollbar track */
+    ::-webkit-scrollbar {
+        width: 10px;  /* Width of the scrollbar */
+    }
+    
+    ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;  /* Background color of the track */
+        //color: b;
+    }
+    
+    /* Styles for the scrollbar thumb */
+    ::-webkit-scrollbar-thumb {
+        background-color: $primary-color;  /* Color of the thumb */
+        border-radius: 5px;  /* Rounded corners of the thumb */
+    }
+    
+    /* Styles for the scrollbar thumb when hovering */
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: $primary-color;  /* Color of the thumb on hover */
+    }
+
+    button {
+        outline-color: transparent;
+    }
+}
+
+// .body {
+//     display: flex;
+//     position: absolute;
+//     flex-direction: column;
+// }
+
+.modalState {
+    //border: 2px solid red;
+    overflow-y: hidden;
+    background-color: rgba(0, 0, 0, 0.05);
+}

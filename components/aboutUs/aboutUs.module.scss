@@ -1,0 +1,134 @@
+/** This contains the scss for the about us component */
+
+///Libraries -->
+@use "@/styles/base.module" as *;
+
+///Commencing the code
+.main {
+    @include flexBar($align: center, $justify: center, $gap: 2%, $flex_d: row);
+    @include size($height: 85%, $width: 100%);
+    //background-image: linear-gradient(to bottom, transparent, transparent, transparent, rgba(255, 255, 255, 0.986)), url("https://drive.google.com/uc?export=download&id=1pj3Qwosp72TAarXQchvwtw77Z5y0GpTt");
+    @include position($left: 0%, $top: 95%);
+    //border: 2px solid red;
+    z-index: 0;
+    //padding-left: 5%;
+    //padding-right: 5%;
+    //background-image: linear-gradient(to bottom, rgba(182, 226, 253, 0.5), rgba(182, 226, 253, 0.75), transparent);
+
+    @include tabletPro {
+        @include size($height: 40%);
+        top: 45%;
+        //gap: 5%;
+        //@include flexBar($gap: 5%);
+        //overflow: hidden
+    }
+
+    @include tablet {
+        @include size($height: 50%);
+        top: 45%;
+        //gap: 5%;
+        //@include flexBar($gap: 5%);
+        //overflow: hidden
+    }
+
+    @include phonePro {
+        flex-direction: column;
+        //border: 2px solid ;
+        top: 90%;
+        @include size($height: 80%);
+        gap: 0%;
+    }
+
+    @include phone {
+        //border: 1px solid blue;
+        top: 100%;
+        height: 85%;
+    }
+
+    .content {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 5%, $flex_d: column);
+        @include size(35%, 80%);
+
+        @include phonePro {
+            height: 65%;
+            width: 90%;
+        }
+
+        .heading {
+            @include flexBar($position: relative, $justify: center, $align: flex-start, $gap: 5px, $flex_d: column);
+            //border: 1px solid red;
+
+            .heading1 {
+                @include flexBar($position: relative, $justify: center, $align: center, $gap: 2%);
+                @include text-layout($size: 14px, $color: $primary-color, $l_height: 29px);
+                font-family: "Poppins";
+                font-weight: 600;
+                //border: 1px solid red;
+            }
+
+            .heading2 {
+                @include flexBar($position: relative, $justify: center, $align: center, $gap: 2%);
+                @include text-layout($size: 30px, $color: $text-color-2, $l_height: 38px);
+                font-family: "Aclonica";
+                //border: 1px solid red;
+                font-weight: 600;
+
+                @include tabletPro {
+                    font-size: 28px;
+                    line-height: 42px;
+                }
+
+                @include tablet {
+                    font-size: 25px;
+                    line-height: 38px;
+                }
+
+                @include phonePro {
+                    font-size: 25px;
+                    line-height: 38px;
+                }
+            }
+        }
+
+        .text {
+            @include flexBar($position: relative, $justify: center, $align: center, $gap: 2%);
+            @include text-layout($size: 15px, $color: $text-color-1, $l_height: 22px);
+            font-family: "Poppins";
+            //font-weight: 600;
+            //border: 1px solid red;
+
+            @include phonePro {
+                top: -1%;
+                font-size: 14px;
+                line-height: 21px;
+            }
+
+            @include phone {
+                top: -2%;
+            }
+        }
+    }
+
+    .imgContainer {
+        //border: 1px solid blue;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%);
+        @include size(50%, 80%);
+        z-index: 0;
+
+        @include phonePro {
+            height: 35%;
+            width: 90%;
+            top: 0%;
+        }
+
+        .background {
+            //border: 1px solid red;
+            object-fit: contain;
+            object-position: center 30%;
+            position: relative;
+            @include size(100%, 100%);
+            background-image: linear-gradient(to bottom, transparent, transparent, rgba(255, 255, 255, 0.7));
+        } 
+    }
+}

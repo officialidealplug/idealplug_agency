@@ -1,0 +1,148 @@
+/** This contains the scss for the hero component */
+
+///Libraries -->
+@use "@/styles/base.module" as *;
+
+///Commencing the code
+.main {
+    @include flexBar($align: center, $justify: center, $gap: 2%, $flex_d: row);
+    @include size($height: 85%, $width: 100%);
+    //background-image: linear-gradient(to bottom, transparent, transparent, transparent, rgba(255, 255, 255, 0.986)), url("https://drive.google.com/uc?export=download&id=1pj3Qwosp72TAarXQchvwtw77Z5y0GpTt");
+    @include position($left: 0%, $top: 10%);
+    //border: 2px solid red;
+    z-index: 0;
+    //padding-left: 5%;
+    //padding-right: 5%;
+    //background-image: linear-gradient(to bottom, rgba(182, 226, 253, 0.5), rgba(182, 226, 253, 0.75), transparent);
+
+    @include tabletPro {
+        @include size($height: 40%);
+        top: 5%;
+        //gap: 5%;
+        //@include flexBar($gap: 5%);
+        //overflow: hidden
+    }
+
+    @include phonePro {
+        flex-direction: column-reverse;
+        //border: 2px solid yellow;
+        height: 80%;
+        width: 100%;
+        gap: 0%;
+    }
+
+    @include phone {
+        //border: 1px solid blue;
+        height: 85%;
+    }
+
+    .content {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 5%, $flex_d: column);
+        @include size(35%, 80%);
+
+        @include phonePro {
+            height: 60%;
+            width: 90%;
+        }
+
+        .text1 {
+            @include flexBar($position: relative, $justify: center, $align: center, $gap: 2%);
+            @include text-layout($size: 38px, $color: $text-color-2, $l_height: 57px);
+            font-family: "Aclonica";
+            font-weight: 600;
+
+            @include tabletPro {
+                line-height: 50px;
+            }
+
+            @include tablet {
+                font-size: 30px;
+                line-height: 47px;
+            }
+
+            @include tabletMini {
+                font-size: 30px;
+                line-height: 40px;
+            }
+
+            @include phonePro {
+                font-size: 30px;
+                line-height: 43px;
+            }
+        }
+
+        .text2 {
+            @include flexBar($position: relative, $justify: center, $align: center, $gap: 2%);
+            @include text-layout($size: 15px, $color: $text-color-1, $l_height: 22px);
+            font-family: "Poppins";
+            //font-weight: 600;
+
+            @include phonePro {
+                font-size: 14px;
+                line-height: 21px;
+                //text-align: center;
+            }
+        }
+
+        .contentBtn {
+            border: 1px solid $primary-color;
+            @include flexBar($position: relative, $justify: center, $align: center, $gap: 2%);
+            @include size($height: 10%, $width: auto);
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: $primary-color;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(250, 107, 24, 0.5);
+
+            @include phonePro {
+                height: 12%;
+            }
+
+            span {
+                @include text-layout($size: 14px, $color: $tertiary-color, $l_height: 22px);
+                font-family: "Poppins";
+            }
+
+            &:hover {
+                transform: scale(1.01);
+                box-shadow: 0 6px 16px rgba(250, 107, 24, 0.9);
+            }
+        }
+    }
+
+    .imgContainer {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%);
+        @include size(50%, 80%);
+        z-index: 0;
+
+        @include phonePro {
+            height: 35%;
+            width: 85%;
+            top: 3%;
+        }
+
+        .background {
+            //border: 1px solid red;
+            object-fit: contain;
+            object-position: center 30%;
+            position: relative;
+            @include size(100%, 100%);
+            background-image: linear-gradient(to bottom, transparent, transparent, rgba(255, 255, 255, 0.7));
+        } 
+    }
+}
+
+.main:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px; /* Adjust the height to control the blur area */
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    filter: blur(2px); /* Adjust the blur radius as needed */
+    z-index: -1;
+}
