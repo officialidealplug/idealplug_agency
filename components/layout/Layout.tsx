@@ -22,6 +22,7 @@ import { GoogleTagManager, sendGTMEvent } from "@next/third-parties/google"
 import { getCurrentDate, getCurrentTime, backend, statSheetId, extractBaseTitle, userIdName, clientInfoName, sendMetaCapi, hashValue } from "@/config/utils";
 import { getDevice, getItem, getOS, setItem, Cache, notify, getFacebookCookies } from "@/config/clientUtils";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/next';
 
 /**
  * @title Layout Component
@@ -250,6 +251,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <main className='container'>{children}</main>
         {/* <Footer /> */}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
